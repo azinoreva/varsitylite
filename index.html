@@ -1,0 +1,132 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Main Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: width 0.3s;
+        }
+        .sidebar.collapsed {
+            width: 80px;
+        }
+        .sidebar-header {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        .sidebar-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            transition: margin-right 0.3s;
+        }
+        .sidebar-header h4 {
+            margin: 0;
+            transition: opacity 0.3s;
+        }
+        .sidebar-header.collapsed h4 {
+            opacity: 0;
+        }
+        .sidebar-menu {
+            flex-grow: 1;
+        }
+        .sidebar-menu a {
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .sidebar-menu a:hover {
+            background-color: #495057;
+        }
+        .sidebar-menu i {
+            margin-right: 1rem;
+            transition: margin-right 0.3s;
+        }
+        .sidebar-menu.collapsed i {
+            margin-right: 0;
+        }
+        .sidebar-menu.collapsed a span {
+            display: none;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 2rem;
+        }
+        .toggle-btn {
+            background-color: #343a40;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/profile.jpg" alt="Profile">
+            <h4>Username</h4>
+        </div>
+        <div class="sidebar-menu">
+            <a href="library.html"><i class="fas fa-book"></i> <span>Library</span></a>
+            <a href="#"><i class="fas fa-comments"></i> <span>Channels</span></a>
+            <a href="chat.html"><i class="fas fa-envelope"></i> <span>Messages</span></a>
+            <a href="lectures.html"><i class="fas fa-chalkboard-teacher"></i> <span>Lectures</span></a>
+        </div>
+        <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+    </div>
+    <div class="content">
+        <div id="app">
+            <!-- Vue app will load posts here -->
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+            document.querySelector('.sidebar-header').classList.toggle('collapsed');
+            document.querySelector('.sidebar-menu').classList.toggle('collapsed');
+        }
+
+        new Vue({
+            el: '#app',
+            data: {
+                posts: []
+            },
+            created() {
+                // Fetch posts and assign to this.posts
+                // Example:
+                // this.posts = [{ id: 1, content: 'First post!' }, { id: 2, content: 'Second post!' }];
+            },
+            template: `
+                <div>
+                    <div v-for="post in posts" :key="post.id" class="post">
+                        <p>{{ post.content }}</p>
+                    </div>
+                </div>
+            `
+        });
+    </script>
+</body>
+</html>
+```

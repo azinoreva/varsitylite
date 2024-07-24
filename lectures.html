@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Scheduler</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ffc107;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .lecture-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Lecture Scheduler</h1>
+        <div class="notification">
+            <span class="bell-icon">&#128276;</span> You have new lectures!
+        </div>
+        <div id="lecturesList" class="mb-3">
+            <!-- Lectures will be displayed here -->
+        </div>
+        <form id="createLectureForm" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="course_code">Course Code</label>
+                <input type="text" id="course_code" name="course_code" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="lecturer_name">Lecturer Name</label>
+                <input type="text" id="lecturer_name" name="lecturer_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="class_dates">Class Dates</label>
+                <input list="Days" id="class_dates" name="class_dates" class="form-control" required>
+                <datalist id="Days">
+                    <option value= "Monday">
+                    <option value= "Tuesday">
+                    <option value= "Wednessday">
+                    <option value= "Thursday">
+                    <option value= "Friday">
+                    <option value= "Saturday">
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="notes">Course Notes</label>
+                <input type="file" id="notes" name="notes" class="form-control">
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="lectures.js"></script>
+</body>
+</html>
