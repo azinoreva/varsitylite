@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Main Page</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -78,13 +78,147 @@
             padding: 0.5rem 1rem;
             cursor: pointer;
         }
+        .feed-container{
+            width: 60%;
+            height: 600px;
+            margin-top: 5px;
+            border-left: 1px solid #cdcdcd;
+            border-right: 1px solid #cdcdcd;
+            margin-inline: auto;
+            box-shadow: 1px 1px 5px #333, -1px -1px 5px #333
+        }
+        .feed{
+            width: 90%;
+            height: 90%;
+            margin-inline: auto;
+            /* margin-top: 30px; */
+        }
+        .feed img{
+            margin-top: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            user-select:none;
+        }
+        .feed-options{
+            margin-top: 25px;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+        }
+        .message-container{
+            margin-top: 35px;
+            width: 300px;
+            height: 320px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 7px;
+            background-color: #495057;
+            color: #fff;
+            margin-right: 10px;
+        }
+        .heading{
+            text-align: center;
+            width: 50%;
+            text-transform: uppercase;
+            padding-left: 50px;
+        }
+        .message{
+            border: 1px solid white;
+            border-radius: 7px;
+            margin-left: 15px;
+            width: 270px;
+            height:50px;
+            overflow: hidden;
+            padding-left: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+           
+        }
+        .follow-container{
+            border: 1px solid white;
+            border-radius: 7px;
+            margin-left: 15px;
+            width: 270px;
+            height:50px;
+            padding-left: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .message h3, .follow-container h3{
+            font-size: 1rem;
+        }
+
+        .follow{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #fff;
+        }
+
+        .follow h3{
+            display: inline;
+            font-size: 1rem;
+        }
+        .follow img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .follow-btn{
+            width: 100px;
+            height: 30px;
+            margin-right: 5px;
+            border-radius: 7px;
+        }
+        .follow-btn button{
+            width: 100%;
+            height:100%;
+            font-size: 1.2rem;
+            border-radius: 7px;
+            background-color: #4524d8;
+            color: #fff;
+            cursor:pointer;
+        }
+       
+        @media only screen and (max-width: 1000px){
+            .message-container{
+                display:none;
+            }
+            .content {
+            padding: 0;
+        }
+            .feed{
+            width: 100%;
+            height: 90%;
+        }
+        .feed img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+        }
+        /* .feed-options{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+        } */
+        }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <div class="sidebar-header">
-            <img src="assets/profile.jpg" alt="Profile">
-            <h4>Username</h4>
+            <img src="./assets/img/icon.png" alt="Profile">
+            <h4>King prosper</h4>
         </div>
         <div class="sidebar-menu">
             <a href="library.html"><i class="fas fa-book"></i> <span>Library</span></a>
@@ -96,9 +230,128 @@
     </div>
     <div class="content">
         <div id="app">
-            <!-- Vue app will load posts here -->
+            <div class="feed-container">
+                <div class="feed">
+                    <img src="./assets/img/3343893.jpg" alt="" />
+                </div>
+                <div class="feed-options">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-comment"></i>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            </div>
+            <div class="feed-container">
+                <div class="feed">
+                    <img src="./assets/img/3343893.jpg" alt="" />
+                </div>
+                <div class="feed-options">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-comment"></i>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            </div>
+            <div class="feed-container">
+                <div class="feed">
+                    <img src="./assets/img/3343893.jpg" alt="" />
+                </div>
+                <div class="feed-options">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-comment"></i>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            </div>
+            <div class="feed-container">
+                <div class="feed">
+                    <img src="./assets/img/3343893.jpg" alt="" />
+                </div>
+                <div class="feed-options">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-comment"></i>
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+            </div>
         </div>
     </div>
+    <aside> 
+    <div class="message-container">
+        <h3 class="heading"> notification </h3>
+        
+        <div class="message">
+            <i class="fa-regular fa-bell"></i>
+            <h3>zino sent you three messages</h3>
+        </div>
+        <div class="message">
+            <i class="fa-regular fa-bell"></i>
+            <h3>MEE 534 tutorial</h3>
+        </div>
+        <div class="message">
+            <i class="fa-regular fa-bell"></i>
+            <h3>CVE 332 tutorial</h3>
+        </div>
+        <div class="message">
+            <i class="fa-regular fa-bell"></i>
+            <h3>CHT 101 assignment</h3>
+        </div>
+        <div class="message">
+            <i class="fa-regular fa-bell"></i>
+            <h3>Town hall: meeting has started</h3>
+        </div>
+    </div>
+
+    <div class="message-container">
+        <h3 class=""> people you may know </h3>
+        
+        <div class="follow-container">
+            <div class="follow">
+                <img src="./assets/img/icon.png" alt="">
+            </div>
+            <h3>Peter Mosh</h3>
+            <div class="follow-btn">
+                <button>follow</button>
+            </div>
+        </div>
+        <div class="follow-container">
+            <div class="follow">
+                <img src="./assets/img/icon.png" alt="">
+            </div>
+            <h3>Chris Jennings</h3>
+            <div class="follow-btn">
+                <button>follow</button>
+            </div>
+        </div>
+        <div class="follow-container">
+            <div class="follow">
+                <img src="./assets/img/icon.png" alt="">
+            </div>
+            <h3>Tony Bamford</h3>
+            <div class="follow-btn">
+                <button>follow</button>
+            </div>
+        </div>
+        <div class="follow-container">
+            <div class="follow">
+                <img src="./assets/img/icon.png" alt="">
+            </div>
+            <h3>James Charmicheal</h3>
+            <div class="follow-btn">
+                <button>follow</button>
+            </div>
+        </div>
+        <div class="follow-container">
+            <div class="follow">
+                <img src="./assets/img/icon.png" alt="">
+            </div>
+            <h3>Chris Hall</h3>
+            <div class="follow-btn">
+                <button>follow</button>
+            </div>
+        </div>
+    </div>
+    </aside>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
@@ -108,25 +361,24 @@
             document.querySelector('.sidebar-menu').classList.toggle('collapsed');
         }
 
-        new Vue({
-            el: '#app',
-            data: {
-                posts: []
-            },
-            created() {
-                // Fetch posts and assign to this.posts
-                // Example:
-                // this.posts = [{ id: 1, content: 'First post!' }, { id: 2, content: 'Second post!' }];
-            },
-            template: `
-                <div>
-                    <div v-for="post in posts" :key="post.id" class="post">
-                        <p>{{ post.content }}</p>
-                    </div>
-                </div>
-            `
-        });
+        // new Vue({
+        //     el: '#app',
+        //     data: {
+        //         posts: []
+        //     },
+        //     created() {
+        //         // Fetch posts and assign to this.posts
+        //         // Example:
+        //         // this.posts = [{ id: 1, content: 'First post!' }, { id: 2, content: 'Second post!' }];
+        //     },
+        //     template: `
+        //         <div>
+        //             <div v-for="post in posts" :key="post.id" class="post">
+        //                 <p>{{ post.content }}</p>
+        //             </div>
+        //         </div>
+        //     `
+        // });
     </script>
 </body>
 </html>
-```
